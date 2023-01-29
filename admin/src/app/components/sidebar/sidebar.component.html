@@ -1,0 +1,81 @@
+<!-- Navbar-->
+<header style="background-color: rgb(33, 10, 90); " class="navbar navbar-expand navbar-light fixed-top navbar-box-shadow px-3 px-lg-6" data-scroll-header
+  data-fixed-element>
+  <a class="navbar-brand d-lg-none" href="#"> {{nombre}}
+  </a>
+
+  <button class="navbar-toggler d-block d-lg-none mr-3 ml-auto" type="button" data-toggle="offcanvas"
+    data-target="#componentsNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <button class="navbar-toggler ms-2 me-n3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse1" aria-expanded="false">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <!-- nav de administrador -->
+  <ul class="navbar-nav ml-auto d-none d-lg-flex align-items-center">
+
+    <div style="color: antiquewhite;">Administrador: </div>
+
+    <!-- Sin inicio de sesión -->
+    <ng-container *ngIf="user_lc == undefined">
+      <li class="nav-item d-lg-block mb-0">
+        <a [routerLink]="['/login']" class="nav-tool">
+          <i class="cxi-profile nav-tool-icon"></i>
+          <span class="nav-tool-label"> Iniciar sesión</span>
+        </a>
+      </li>
+    </ng-container>
+
+    <!-- Con inicio de sesión -->
+    <ng-container *ngIf="user_lc != undefined">
+      <li class="nav-item d-lg-block mb-0 dropdown">
+        <a class="nav-tool" data-toggle="dropdown" style="cursor: pointer;">
+          <!-- <i style="color:aliceblue" class="cxi-profile nav-tool-icon"></i> -->
+          <span style="color:aliceblue" class="nav-tool-label"> {{user_lc.nombres}}</span>
+        </a>
+
+        <div class="dropdown-menu">
+          <!-- <a class="dropdown-item">
+            Opciones
+          </a> -->
+          <a (click)="cerrar_sesion()" style="cursor: pointer;" class="dropdown-item text-danger">
+            <i class="cxi-logout me-2"></i>
+            Cerrar sesión
+          </a>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</header>
+
+<!-- Side navigation (Off-canvas)-->
+<aside style="font-size:xx-large;" class="cs-offcanvas cs-offcanvas-expand bg-dark" id="componentsNav">
+  <div style="background-color: rgb(33, 10, 90); " class="cs-offcanvas-cap d-none d-lg-block py-4">
+    <!-- <a [routerLink]="['/']"> 
+      <img [src]="url + 'obtener_logo/' + logo" alt="{{configuracion.logo}}" class="rounded">
+    </a>
+    <a class="navbar-brand py-2 text-center" [routerLink]="['/']"> {{nombre}}
+    </a> -->
+  </div>
+
+  <div style="background-color: rgb(20, 2, 65); " class="cs-offcanvas-body px-0 pt-4 pb-grid-gutter" data-simplebar data-simplebar-inverse>
+    <h1 class="font-size-lg text-light px-6 mt-2 mb-3">DASHBOARD</h1>
+    <hr class="hr-gradient hr-light mb-2 opacity-25">
+    <nav class="nav nav-light">
+      <!-- <a class="nav-link px-4" [routerLink]="['/inicio']" routerLinkActive="active"><i class="bi-house-door-fill"></i>&nbsp; &nbsp; Inicio</a> -->
+      <!-- <a class="nav-link px-4" [routerLink]="['/panel/ventas']" routerLinkActive="active"><i class="bi-bar-chart-line-fill"></i>&nbsp; &nbsp; Ventas</a>
+      <a class="nav-link px-4" [routerLink]="['/panel/ventas-software']" routerLinkActive="active"><i class="bi bi-windows"></i>&nbsp; &nbsp; Ventas software</a> -->
+      <!-- <a class="nav-link px-4" [routerLink]="['/panel/clientes']" routerLinkActive="active"><i class="bi-people-fill"></i>&nbsp; &nbsp; Clientes</a> -->
+      <a class="nav-link px-4" [routerLink]="['/panel/productos']" routerLinkActive="active"><i class="bi-tags-fill"></i>&nbsp; &nbsp; Productos</a>
+      <!-- <a class="nav-link px-4" [routerLink]="['/panel/software']" routerLinkActive="active"><i class="bi-cpu-fill"></i>&nbsp; &nbsp; Software</a>
+      <a class="nav-link px-4" [routerLink]="['/panel/cupones']" routerLinkActive="active"><i class="bi-ticket-perforated-fill"></i>&nbsp; &nbsp; Cupones</a>
+      <a class="nav-link px-4" [routerLink]="['/panel/descuentos']" routerLinkActive="active"><i class="bi-percent"></i>&nbsp; &nbsp; Descuentos</a>
+      <a class="nav-link px-4" [routerLink]="['/panel/contactos']" routerLinkActive="active"><i class="bi-chat-left-quote-fill"></i>&nbsp; &nbsp; Contactos</a>
+      <a class="nav-link px-4" [routerLink]="['/panel/cuentas']" routerLinkActive="active"><i class="bi-credit-card-fill"></i>&nbsp; &nbsp; Cuentas</a> -->
+      <a class="nav-link px-4" [routerLink]="['/panel/configuraciones']" routerLinkActive="active"><i class="bi-sliders"></i>&nbsp; &nbsp; Configuraciones</a>
+
+    </nav>
+  </div>
+</aside>
