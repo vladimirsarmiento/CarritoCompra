@@ -1,7 +1,6 @@
 'use strict'
 var Admin = require('../models/admin');
 var Venta = require('../models/venta');
-var VentaSoftware = require('../models/ventaSoftware');
 var Contacto = require('../models/contacto');
 var Cuenta = require('../models/cuenta');
 var bcrypt = require('bcrypt-nodejs');

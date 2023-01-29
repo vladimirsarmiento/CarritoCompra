@@ -3,7 +3,6 @@
 var Cliente = require('../models/cliente');
 var Contacto = require('../models/contacto');
 var Venta = require('../models/venta');
-var VentaSoftware = require('../models/ventaSoftware');
 var Dventa = require('../models/dventa');
 var Review = require('../models/review');
 var Cupon = require('../models/cupon');

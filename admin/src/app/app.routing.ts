@@ -24,7 +24,6 @@ import { ReviewsProductoComponent } from './components/productos/reviews-product
 import { IndexVentasComponent } from './components/ventas/index-ventas/index-ventas.component';
 import { DetalleVentasComponent } from './components/ventas/detalle-ventas/detalle-ventas.component';
 /*import { VentasSofwareComponent } from './components/ventas-sofware/ventas-sofware.component'; */
-import { DetalleVentasSofwareComponent } from './components/detalle-ventas-sofware/detalle-ventas-sofware.component';
 import { IndexCuentasComponent } from './components/cuentas/index-cuentas/index-cuentas.component';
 import { CreateCuentasComponent } from './components/cuentas/create-cuentas/create-cuentas.component';
 import { EditCuentasComponent } from './components/cuentas/edit-cuentas/edit-cuentas.component';
@@ -61,7 +60,6 @@ const appRoute: Routes = [
         {path: 'ventas/:id', component: DetalleVentasComponent, canActivate: [AdminGuard]},
 
         /*{path: 'ventas-software', component: VentasSofwareComponent, canActivate: [AdminGuard]},*/
-        {path: 'ventas-software/:id', component: DetalleVentasSofwareComponent, canActivate: [AdminGuard]},
 
         {path: 'contactos', component: IndexContactoComponent, canActivate: [AdminGuard]},
 

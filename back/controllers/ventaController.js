@@ -1,6 +1,5 @@
 
 var Venta = require('../models/venta');
-var VentaSoftware = require('../models/ventaSoftware');
 var Dventa = require('../models/dventa');
 var Producto = require('../models/producto');
 var Carrito = require('../models/carrito');
