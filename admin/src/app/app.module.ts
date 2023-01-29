@@ -24,9 +24,7 @@ import { UpdateCuponComponent } from './components/cupones/update-cupon/update-c
 import { ConfigComponent } from './components/config/config.component';
 import { VariedadProductoComponent } from './components/productos/variedad-producto/variedad-producto.component';
 import { GaleriaProductoComponent } from './components/productos/galeria-producto/galeria-producto.component';
-import { IndexSoftwareComponent } from './components/software/index-software/index-software.component';
-import { CreateSoftwareComponent } from './components/software/create-software/create-software.component';
-import { UpdateSoftwareComponent } from './components/software/update-software/update-software.component';
+
 import { CreateDescuentoComponent } from './components/descuento/create-descuento/create-descuento.component';
 import { EditDescuentoComponent } from './components/descuento/edit-descuento/edit-descuento.component';
 import { IndexDescuentoComponent } from './components/descuento/index-descuento/index-descuento.component';
@@ -59,9 +57,6 @@ import { EditCuentasComponent } from './components/cuentas/edit-cuentas/edit-cue
     ConfigComponent,
     VariedadProductoComponent,
     GaleriaProductoComponent,
-    IndexSoftwareComponent,
-    CreateSoftwareComponent,
-    UpdateSoftwareComponent,
     CreateDescuentoComponent,
     EditDescuentoComponent,
     IndexDescuentoComponent,
@@ -69,7 +64,6 @@ import { EditCuentasComponent } from './components/cuentas/edit-cuentas/edit-cue
     ReviewsProductoComponent,
     IndexVentasComponent,
     DetalleVentasComponent,
-    //VentasSofwareComponent,
     DetalleVentasSofwareComponent,
     IndexCuentasComponent,
     CreateCuentasComponent,
