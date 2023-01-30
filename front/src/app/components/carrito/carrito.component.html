@@ -1,38 +1,40 @@
 <app-nav></app-nav>
 <main class="cs-page-wrapper">
   <!-- Breadcrumb -->
-  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+  <nav class="bg-secondary mb-3 mt-5" aria-label="breadcrumb">
     <div class="container">
       <ol class="breadcrumb breadcrumb-alt mb-0">
         <li class="breadcrumb-item">
           <a href="index.html"><i class="cxi-home"></i></a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        <li class="breadcrumb-item active" aria-current="page">Verificar</li>
       </ol>
     </div>
   </nav>
 
-
   <!-- Page content -->
   <section class="container pt-3 pt-md-4 pb-3 pb-sm-4 pb-lg-5 mb-4">
     <div class="row">
-
       <!-- Checkout content -->
       <div class="col-lg-8 pr-lg-6">
         <div class="d-flex align-items-center justify-content-between pb-2 mb-4">
-          <h1 class="mb-0">Checkout</h1>
-          <a [routerLink]="['/productos']"><strong>Volver a tienda</strong></a>
+          <h1 style="color: rgb(89, 48, 191);" class="mb-0 bi-cart4">Mi Carrito</h1>
+          <a style="color: rgb(138, 32, 58);" [routerLink]="['/productos']">
+            <strong>!Volver a los productos¡</strong></a>
         </div>
 
         <hr class="border-top-0 border-bottom pt-2 mb-4">
 
         <!-- Order review -->
-        <h2 class="h4 mb-4">1. Revisión de la orden</h2>
-        <div class="bg-secondary rounded mb-5" *ngIf="carrito_arr.length >= 1">
+        <h2 class="h4 mb-4">1. Mis órdenes</h2>
+        <div  class="bg-secondary rounded mb-5" *ngIf="carrito_arr.length >= 1">
           <!-- Item -->
-          <div class="media px-2 px-sm-4 py-4 border-bottom" *ngFor="let item of carrito_arr">
+          <div  style="background-color: hsla(150, 70%, 59%, 0.103);"
+          class="media px-2 px-sm-4 py-4 border-bottom" *ngFor="let 
+          item of carrito_arr">
             <a [routerLink]="['/productos/', item.producto.slug]" style="min-width: 80px;">
-              <img [src]="url + 'obtener_portada/' + item.producto.portada" width="80" alt="Product thumb">
+              <img [src]="url + 'obtener_portada/' + item.producto.portada" 
+              width="80" alt="Product thumb">
             </a>
             <div class="media-body w-100 pl-3">
               <div class="d-sm-flex">
@@ -42,21 +44,23 @@
                       class="nav-link font-weight-bold">{{item.producto.titulo}}</a>
                   </h3>
                   <ul class="list-unstyled font-size-xs mt-n2 mb-2">
-                    <li class="mb-0"><span class="text-muted">{{item.producto.titulo_variedad}}:</span>
+                    <li class="mb-0"><span 
+                      class="text-muted">{{item.producto.titulo_variedad}}:</span>
                       {{item.variedad}}</li>
                   </ul>
                 </div>
                 <div class="d-flex pr-sm-3">
-                  <input type="number" class="form-control form-control-sm bg-light mr-3" style="width: 4.5rem;"
-                    value="{{item.cantidad}}" readonly>
-                  <div class="text-nowrap" *ngIf="descuento_activo == undefined"><strong class="text-muted"
-                      style="font-size: 1.2rem;">
+                  <div  class="text-nowrap" *ngIf="descuento_activo == undefined">
+                    <strong class="" style="font-size: 1.2rem; color: rgb(89, 48, 191);">
                       S/. {{item.producto.precio}}</strong>
                   </div>
 
-                  <div class="text-muted row h5 justify-content-between" *ngIf="descuento_activo != undefined">
+                  <div class="text-muted row h5 justify-content-between"
+                  *ngIf="descuento_activo != undefined">
                     <div class="text-danger ml-1">
-                      <strong>S/. {{item.producto.precio | descuento: descuento_activo.descuento}}</strong>
+                      <strong>
+                        S/. {{item.producto.precio | descuento:descuento_activo.descuento}}
+                      </strong>
                     </div>
 
                     <div class="ml-1 text-muted">
@@ -64,21 +68,22 @@
                     </div>
                   </div>
                 </div>
-                <div class="d-flex align-items-center flex-sm-column text-sm-center ml-sm-auto pt-3 pt-sm-0">
-                  <a style="cursor: pointer; font-size: 1.2rem;" class="nav-link px-2 text-danger mx-2" title="Eliminar"
+                <div class="d-flex align-items-center flex-sm-column 
+                text-sm-center ml-sm-auto pt-3 pt-sm-0">
+                  <a style="cursor: pointer; font-size: 1.2rem;" 
+                  class="nav-link px-2 text-danger mx-2" title="Eliminar"
                     (click)="eliminar_item(item._id)">
                     <i class="cxi-delete"></i></a>
-                  <button class="btn btn-link btn-sm text-decoration-none pt-0 pt-sm-2 px-0 pb-0 mt-0 mt-sm-1">
-                    Añadir
-                    <i class="cxi-heart ml-1"></i>
-                  </button>
+                  
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="px-3 px-sm-4 py-4 text-right">
-            <span class="text-muted">Subtotal:<strong class="text-dark font-size-lg ml-2">S/. {{subtotal}}
+          <div style="background-color: rgba(137, 240, 128, 0.425);"
+          class="px-3 px-sm-4 py-4 text-right">
+            <span class="text-danger"> Monto total: <strong 
+              class="text-dark font-size-lg ml-2">S/. {{subtotal}}
               </strong></span>
           </div>
         </div>
@@ -103,11 +108,13 @@
         <!-- Adresses -->
         <h2 class="h4">2. Dirección de envío</h2>
         <div class="row">
-          <div class="card-body">
+          <div style="background-color: hsla(150, 70%, 59%, 0.103);" class="card-body">
             <div class="row justify-content-center" *ngIf="direccion_principal != undefined">
               <!-- Header and footer -->
               <div class="shadow text-center col-sm-12 rounded">
-                <div class="card-header">ZIP: {{direccion_principal.zip}}
+                <div style="color: rgb(138, 32, 58);"
+                 class="card-header"> 
+                 <strong>Código postal: </strong>{{direccion_principal.zip}}
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">{{direccion_principal.destinatario}}</h5>
@@ -118,9 +125,10 @@
                     <span> - {{direccion_principal.pais}}</span>
                   </p>
                   <p class="card-text">Teléfono: {{direccion_principal.telefono}}</p>
-                  <span class="badge rounded-pill bg-info text-white" *ngIf="direccion_principal.principal">
+                  <!-- <span class="badge rounded-pill bg-info text-white"
+                  *ngIf="direccion_principal.principal">
                     Dirección de envío actual
-                  </span>
+                  </span> -->
                 </div>
               </div>
             </div>
@@ -150,38 +158,20 @@
 
         <hr class="mb-4 pb-2">
 
-        <!-- Shipping -->
-        <h2 class="h4 mb-4">3. Métodos de envío</h2>
-
-        <p>Estimado cliente, por nuestras políticas de envío, todas tus compras se enviarán
-          mediante el método de pago contra entrega, es decir <em>al momento de realizar el recojo de su paquete,
-            deberá pagar a la empresa de transporte
-          </em>.
-        </p>
-
-        <p style="font-size: 1.2rem; background-color: rgb(255, 191, 191);" class="rounded p-3">
-          EL código de envío así como la empresa por donde se envía, se hará llegar mediante <strong>WhatsApp</strong>
-          o <strong>Correo electóronico</strong> al titular de la compra.
-        </p>
-        <span style="font-size: 1.2rem;">
-          <strong class="d-block">{{envios.titulo}}</strong>
-          <span class="text-muted font-size-sm">Tiempo de espera: {{envios.tiempo}}</span>
-        </span>
-
-        <hr class="border-top-0 border-bottom pt-4 mb-4">
-
         <!-- Payment -->
-        <h2 class="h4 pt-2 mb-4">4. Métodos de pago</h2>
+        <h2 class="h4 pt-2 mb-4">3. Método de pago</h2>
         <div class="row pb-4">
           <div class="col-lg-12">
             <div class="accordion-alt" id="payment-methods">
 
               <!-- Card: Credit card -->
-              <div class="card mb-3 px-4 py-3 border rounded box-shadow-sm">
+              <!-- <div class="card mb-3 px-4 py-3 border rounded box-shadow-sm">
                 <div class="card-header py-2">
-                  <div class="accordion-heading custom-control custom-radio" data-toggle="collapse"
+                  <div class="accordion-heading custom-control custom-radio" 
+                  data-toggle="collapse"
                     data-target="#cc-card">
-                    <input type="radio" class="custom-control-input" id="cc" name="payment" checked>
+                    <input type="radio" class="custom-control-input" id="cc" 
+                    name="payment" checked>
                     <label for="cc" class="custom-control-label d-flex align-items-center">
                       <strong class="d-block mr-3">Tarjeta de crédito / débito</strong>
                       <img src="assets/img/cards.png" width="108" alt="Credit cards">
@@ -193,18 +183,21 @@
                   <div class="card-body pt-3 pb-0">
                     <div class="form-group mb-3">
                       <label for="cc-number">Número de tarjeta</label>
-                      <input type="text" id="cc-number" class="form-control form-control-lg" data-format="card"
+                      <input type="text" id="cc-number" 
+                      class="form-control form-control-lg" data-format="card"
                         placeholder="0000 0000 0000 0000">
                     </div>
                     <div class="d-flex">
                       <div class="form-group mb-3 mr-3">
                         <label for="cc-exp-date">Vencimiento</label>
-                        <input type="text" id="cc-exp-date" class="form-control form-control-lg" data-format="date"
+                        <input type="text" id="cc-exp-date" 
+                        class="form-control form-control-lg" data-format="date"
                           placeholder="mm/yy">
                       </div>
                       <div class="form-group mb-3">
                         <label for="cc-cvc">CVC</label>
-                        <input type="text" id="cc-cvc" class="form-control form-control-lg" data-format="cvc"
+                        <input type="text" id="cc-cvc" 
+                        class="form-control form-control-lg" data-format="cvc"
                           maxlength="3" placeholder="000">
                       </div>
                     </div>
@@ -214,26 +207,31 @@
                     Completar orden S/. {{total_pagar}}
                   </button>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Transferencia -->
-              <div class="card mb-3 px-4 py-3 border rounded box-shadow-sm">
+              <!-- <div class="card mb-3 px-4 py-3 border rounded box-shadow-sm">
                 <div class="card-header py-2">
-                  <div class="accordion-heading custom-control custom-radio" data-toggle="collapse"
+                  <div class="accordion-heading custom-control custom-radio" 
+                  data-toggle="collapse"
                     data-target="#trans">
-                    <input type="radio" class="custom-control-input" id="trans" name="payment">
-                    <label for="trans" class="custom-control-label d-flex align-items-center">
+                    <input type="radio" class="custom-control-input" 
+                    id="trans" name="payment">
+                    <label for="trans" 
+                    class="custom-control-label d-flex align-items-center">
                       <strong class="d-block mr-3">Transferencia / depósito bancario</strong>
                       <img src="assets/img/trans.png" width="200" alt="Credit cards">
                     </label>
                   </div>
                 </div>
                 <div class="collapse mx-4" id="trans" data-parent="#payment-methods">
-                  <!-- Cuentas -->
+                  
                   <div class="row" *ngFor="let item of cuentas">
-                    <div class="col-12 rounded mt-3 p-3" [ngStyle]="{'background-color': item.color}">
+                    <div class="col-12 rounded mt-3 p-3" 
+                    [ngStyle]="{'background-color': item.color}">
                       Cuenta del banco <strong>{{item.banco}}: {{item.cuenta}}</strong>, o al
-                      <strong>CCI: {{item.cci}}</strong> a nombre de <strong> {{item.titular}} </strong>
+                      <strong>CCI: {{item.cci}}</strong> 
+                      a nombre de <strong> {{item.titular}} </strong>
                     </div>
                   </div>
 
@@ -255,7 +253,6 @@
                       Reservar compra
                     </button>
 
-                    <!-- MODAL -->
                     <div class="modal fade" id="confirm" tabindex="-1" style="display: none" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -287,23 +284,27 @@
                   </div>
 
                 </div>
-              </div>
+              </div> -->
 
               <!-- Card: PayPal -->
               <div class="card mb-3 px-4 py-3 border rounded box-shadow-sm">
                 <div class="card-header py-2">
-                  <div class="accordion-heading custom-control custom-radio" data-toggle="collapse"
+                  <div class="accordion-heading custom-control custom-radio" 
+                  data-toggle="collapse"
                     data-target="#paypal-card">
-                    <input type="radio" class="custom-control-input" id="paypal" name="payment">
-                    <label for="paypal" class="custom-control-label d-flex align-items-center">
-                      <strong class="d-block mr-3">PayPal</strong>
+                    <input type="radio" class="custom-control-input" 
+                    id="paypal" name="payment">
+                    <label for="paypal" 
+                    class="custom-control-label d-flex align-items-center">
+                      <strong class="d-block mr-3">Pagar con Paypal</strong>
                       <img src="assets/img/paypal-badge.png" width="48" alt="PayPal">
                     </label>
                   </div>
                 </div>
                 <div class="collapse" id="paypal-card" data-parent="#payment-methods">
                   <div class="card-body pt-3 pb-0" #paypalButton>
-                    <p class="rounded text-center py-2" style="background-color: rgb(255, 191, 191);">
+                    <p class="rounded text-center py-2" 
+                    style="background-color: rgb(255, 191, 191);">
                       El tipo de cambio está dado en base al emitido por el SUNAT al día de hoy: <br> <strong>
                         1 USD <i class="cxi-arrow-right"></i>
                         S/. {{tipo_cambio}} </strong>
@@ -315,41 +316,35 @@
           </div>
         </div>
 
-        <hr class="mb-4 pb-2">
 
-        <!-- Additional info -->
-        <h2 class="h4 mb-4">5. Información adicional (opcional)</h2>
-        <div class="form-group">
-          <label for="ch-notes">Mensaje de la orden</label>
-          <textarea id="ch-notes" class="form-control form-control-lg" rows="5" name="nota" [(ngModel)]="venta.nota"
-            placeholder="Escriba su mensaje"></textarea>
-        </div>
       </div>
 
 
       <!-- Order totals (sticky sidebar) -->
       <!-- For more sticky sidebar options visit https://abouolia.github.io/sticky-sidebar/#options -->
-      <aside class="col-lg-4">
+      <!-- <aside class="col-lg-4">
         <div class="sidebar-sticky">
           <div class="sidebar-sticky-inner">
             <div class="form-group">
               <label for="promo-code">Aplicar cupón</label>
               <div class="input-group input-group-lg">
-                <input type="text" id="promo-code" class="form-control" placeholder="Ingrese código de cupón"
+                <input type="text" id="promo-code" class="form-control" 
+                placeholder="Ingrese código de cupón"
                   name="venta.cupon" [(ngModel)]="venta.cupon">
                 <div class="input-group-append">
-                  <button type="button" class="btn btn-primary" (click)="validar_cupon()" [disabled]="!btn_cupon">
+                  <button type="button" class="btn btn-primary" 
+                  (click)="validar_cupon()" [disabled]="!btn_cupon">
                     Aplicar
                   </button>
                 </div>
               </div>
 
-              <!-- Danger alert -->
-              <div class="alert alert-danger mt-3 text-center" role="alert" *ngIf="error_cupon">
+              <div class="alert alert-danger mt-3 text-center" 
+              role="alert" *ngIf="error_cupon">
                 {{error_cupon}}
               </div>
-
             </div>
+            
             <div class="bg-secondary rounded mb-4">
               <div class="border-bottom p-4">
                 <h2 class="h4 mb-0">Total de la orden</h2>
@@ -359,10 +354,12 @@
                   <span class="font-weight-bold">Subtotal:</span>
                   <span class="font-weight-bold">S/. {{subtotal}} </span>
                 </li>
+
                 <li class="d-flex justify-content-between mb-2">
                   <span>Envío:</span>
                   <span>S/. {{precio_envio}}</span>
                 </li>
+                
                 <li class="d-flex justify-content-between mb-2">
                   <span>Descuento por cupón:</span>
                   <span class="text-danger">- S/ {{descuento}}</span>
@@ -375,7 +372,7 @@
             </div>
           </div>
         </div>
-      </aside>
+      </aside> -->
     </div>
   </section>
 </main>

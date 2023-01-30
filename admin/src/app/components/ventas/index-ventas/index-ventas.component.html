@@ -2,18 +2,16 @@
 
 <!-- Page title-->
 <div class="border-bottom mt-4 mb-5">
-    <h1 class="mt-2 mt-md-4 mb-3 pt-5">Ventas</h1>
-    <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
-        <p class="text-muted">Este módulo lista todas las ventas de la tienda.</p>
-
-    </div>
+    <h1 style="color: rgb(89, 48, 191);" class="mt-2 mt-md-4 mb-3 pt-5">Panel de Ventas</h1>
+    <div class="d-flex flex-wrap flex-md-nowrap justify-content-between"></div>
 </div>
 
 <div class="card box-shadow-sm">
-    <div class="card-header">
+    <!-- <div class="card-header">
         <h5 style="margin-bottom: 0px;">Filtro de ventas</h5>
-    </div>
-    <div class="card-header">
+    </div> -->
+
+    <!-- <div class="card-header">
         <div class="row">
             <div class="col-6">
                 <div class="form-group">
@@ -35,7 +33,6 @@
             </div>
         </div>
 
-        <!-- Button addon on the right -->
         <div class="input-group mt-4">
             <input class="form-control" type="text" placeholder="Filtrar por ID de venta" name="filtro_cod"
                 [(ngModel)]="filtro_cod" (keyup)="filtrar_cod(filtro_cod)">
@@ -44,7 +41,7 @@
         <div class="rounded my-2" *ngIf="err_msg" style="background-color: rgb(255, 223, 223);">
             <p class="text-center p-2 text-danger">ERROR: Ingrese el ID correctamente.</p>
         </div>
-    </div>
+    </div> -->
 
     <div class="card-body">
 
@@ -53,11 +50,13 @@
                 <div class="row mt-5 justify-content-between">
                     <div class="col">
                         <h3 class="h5 mb-1 nav-dark">
-                            <a class="nav-link"> {{item.cliente.nombres}}
+                            <a style="color: rgb(82, 0, 0);" class="nav-link"> {{item.cliente.nombres}}
                                 {{item.cliente.apellidos}} </a>
                         </h3>
                     </div>
-                    <div class="col text-right">
+
+                    <!-- cambio de estado -->
+                    <!-- <div class="col text-right">
                         <span class="badge badge-primary mb-3 rounded-pill" *ngIf="item.estado == 'Procesando'">
                             {{item.estado}} </span>
                         <span class="badge badge-success mb-3 rounded-pill" *ngIf="item.estado == 'Enviado'">
@@ -75,31 +74,28 @@
                                 <a [routerLink]="['/panel/ventas', item._id]" class="dropdown-item">Ver detalles &nbsp;
                                     <i class="bi-list-ul"></i>
                                 </a>
-                                <a class="dropdown-item"
-                                    data-toggle="modal" [attr.data-target]="'#send-' + item._id"
+                                <a class="dropdown-item" data-toggle="modal" [attr.data-target]="'#send-' + item._id"
                                     style="cursor: pointer;" *ngIf="item.estado == 'Procesando'">Cambiar a Enviado
                                     &nbsp;
                                     <i class="cxi-truck"></i>
                                 </a>
-                                <a class="dropdown-item" 
-                                    data-toggle="modal" [attr.data-target]="'#confirm-' + item._id"
+                                <a class="dropdown-item" data-toggle="modal" [attr.data-target]="'#confirm-' + item._id"
                                     style="cursor: pointer;" *ngIf="item.estado == 'Reservado'">Confirmar pago
                                     &nbsp;
                                     <i class="cxi-arrow-convert"></i>
                                 </a>
-                                <a style="cursor: pointer;"
-                                    data-toggle="modal" [attr.data-target]="'#recibe-' + item._id"
-                                    class="dropdown-item" *ngIf="item.estado == 'Enviado'">Cambiar a Recibido &nbsp;
+                                <a style="cursor: pointer;" data-toggle="modal"
+                                    [attr.data-target]="'#recibe-' + item._id" class="dropdown-item"
+                                    *ngIf="item.estado == 'Enviado'">Cambiar a Recibido &nbsp;
                                     <i class="cxi-check"></i>
                                 </a>
                                 <a class="dropdown-item" style="cursor: pointer; background-color: rgb(255, 221, 221);"
-                                    *ngIf="item.estado == 'Reservado'"
-                                    data-toggle="modal" [attr.data-target]="'#delete-' + item._id">
+                                    *ngIf="item.estado == 'Reservado'" data-toggle="modal"
+                                    [attr.data-target]="'#delete-' + item._id">
                                     <i class="cxi-delete text-danger"></i>
                                 </a>
                             </div>
 
-                            <!-- Modal eliminar -->
                             <div class="modal fade" id="delete-{{ item._id }}" tabindex="-1" style="display: none"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -126,7 +122,6 @@
                                                 Eliminar
                                             </button>
 
-                                            <!-- Button with growing spinner and text -->
                                             <button *ngIf="load_btn" type="button" class="btn btn-secondary">
                                                 <span class="spinner-grow spinner-grow-sm me-2" role="status"
                                                     aria-hidden="true" disabled></span>
@@ -137,7 +132,6 @@
                                 </div>
                             </div>
 
-                            <!-- Modal comfirmar pago -->
                             <div class="modal fade" id="confirm-{{ item._id }}" tabindex="-1" style="display: none"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -165,7 +159,6 @@
                                                 Confirmar
                                             </button>
 
-                                            <!-- Button with growing spinner and text -->
                                             <button *ngIf="load_btn" type="button" class="btn btn-secondary">
                                                 <span class="spinner-grow spinner-grow-sm me-2" role="status"
                                                     aria-hidden="true" disabled></span>
@@ -176,7 +169,6 @@
                                 </div>
                             </div>
 
-                            <!-- Modal enviado -->
                             <div class="modal fade" id="send-{{ item._id }}" tabindex="-1" style="display: none"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -194,35 +186,32 @@
                                         <div class="modal-body text-center">
                                             Confirmar el envío de {{ item._id | uppercase}}? <br><br>
 
-                                            <small class="text-danger mt-4">Recuerde enviar el código de envío así como 
+                                            <small class="text-danger mt-4">Recuerde enviar el código de envío así como
                                                 la empresa de envío al cliente
                                             </small>
-                                        
+
                                             <form #confirmarForm="ngForm">
-                                                <!-- Empresa -->
                                                 <div class="mb-4">
                                                     <label for="empresa" class="form-label">Empresa</label>
-                                                    <input class="form-control" type="text" id="empresa"
-                                                         required name="empresa" [(ngModel)]="envio.empresa"
-                                                         placeholder="Nombre de la empresa">
+                                                    <input class="form-control" type="text" id="empresa" required
+                                                        name="empresa" [(ngModel)]="envio.empresa"
+                                                        placeholder="Nombre de la empresa">
                                                 </div>
-    
+
                                                 <div class="row">
-                                                    <!-- Codigo -->
-                                                <div class="mb-4 col-6">
-                                                    <label for="codigo" class="form-label">Código</label>
-                                                    <input class="form-control" type="text" id="codigo"
-                                                        required name="codigo" [(ngModel)]="envio.codigo"
-                                                        placeholder="Código de envío">
-                                                </div>
-    
-                                                <!-- Clave -->
-                                                <div class="mb-4 col-6">
-                                                    <label for="clave" class="form-label">Clave</label>
-                                                    <input class="form-control" type="number" id="clave"
-                                                        name="clave" [(ngModel)]="envio.clave"
-                                                        placeholder="Clave del envío">
-                                                </div>
+                                                    <div class="mb-4 col-6">
+                                                        <label for="codigo" class="form-label">Código</label>
+                                                        <input class="form-control" type="text" id="codigo" required
+                                                            name="codigo" [(ngModel)]="envio.codigo"
+                                                            placeholder="Código de envío">
+                                                    </div>
+
+                                                    <div class="mb-4 col-6">
+                                                        <label for="clave" class="form-label">Clave</label>
+                                                        <input class="form-control" type="number" id="clave"
+                                                            name="clave" [(ngModel)]="envio.clave"
+                                                            placeholder="Clave del envío">
+                                                    </div>
                                                 </div>
                                             </form>
 
@@ -232,13 +221,13 @@
                                                 data-dismiss="modal">
                                                 Cancelar
                                             </button>
-                                            <button *ngIf="!load_btn" class="btn btn-success btn-sm" [disabled]="confirmarForm.invalid"
+                                            <button *ngIf="!load_btn" class="btn btn-success btn-sm"
+                                                [disabled]="confirmarForm.invalid"
                                                 (click)="cambiar_estado_enviado (item._id)" type="button">
                                                 <i class="cxi-truck"></i>
                                                 Confirmar
                                             </button>
 
-                                            <!-- Button with growing spinner and text -->
                                             <button *ngIf="load_btn" type="button" class="btn btn-secondary">
                                                 <span class="spinner-grow spinner-grow-sm me-2" role="status"
                                                     aria-hidden="true" disabled></span>
@@ -249,7 +238,6 @@
                                 </div>
                             </div>
 
-                            <!-- Modal recibido -->
                             <div class="modal fade" id="recibe-{{ item._id }}" tabindex="-1" style="display: none"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -277,7 +265,6 @@
                                                 Confirmar
                                             </button>
 
-                                            <!-- Button with growing spinner and text -->
                                             <button *ngIf="load_btn" type="button" class="btn btn-secondary">
                                                 <span class="spinner-grow spinner-grow-sm me-2" role="status"
                                                     aria-hidden="true" disabled></span>
@@ -288,50 +275,87 @@
                                 </div>
                             </div>
                         </div>
+                    </div> -->
 
-                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="nav nav-muted mb-2 pb-1">
-                            <li class="nav-item mr-2">
-                                <span class="badge badge-dark MR-3">{{item.nventa}}</span>
-                                <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
+                <div  class="row">
+                    <div class="col-6">
+                        <li class="nav-item mr-2">
+                            <h6 class="mb-0">Identificación de la venta</h6>
+                            <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal">
+                                <i class="mt-n1 mr-2 font-size-base align-middle"></i>{{item._id | uppercase}}
+                            </a>
+                        </li>
+                    </div>
+
+                    <div class="col-6">
+                        <li class="nav-item mr-2">
+                                <h6 class="mb-0">Fecha de venta</h6>
                                 <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal">
                                     {{item.createdAt | date}}
                                 </a>
                                 <span class="text-border px-1">|</span>
                             </li>
-                            <li class="nav-item mr-2">
+                    </div>
+
+                    <div class="col-12 mb-3 mt-3">
+                        <div class="d-flex align-items-center">
+                            <span style="color: red;" class="h5 d-inline-block mb-0">S/. {{item.subtotal}} </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-muted mb-2 pb-1">
+
+                            <!-- <li class="nav-item mr-2">
+                                <h6>Identificación de la venta</h6>
+                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal">
+                                    <i class="mt-n1 mr-2 font-size-base align-middle"></i>
+                                    ID: {{item._id | uppercase}}
+                                </a>
+                            </li> -->
+
+                            <!-- <li class="nav-item mr-2">
+                                <h6>Fecha de venta</h6>
+                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal">
+                                    {{item.createdAt | date}}
+                                </a>
+                                <span class="text-border px-1">|</span>
+                            </li> -->
+
+                            <!-- <li class="nav-item mr-2">
+                                <span class="badge badge-dark MR-3">{{item.nventa}}</span>
+                                <span class="text-border px-1">|</span>
+                            </li> -->
+
+                            
+
+                            <!-- <li class="nav-item mr-2">
                                 <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal">
                                     <i class="cxi-truck mt-n1 mr-2 font-size-base align-middle"></i>
                                     {{item.envio_titulo}}
                                 </a>
                                 <span class="text-border px-1">|</span>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link d-inline-block mr-2 p-0 font-size-sm font-weight-normal">
-                                    <i class="mt-n1 mr-2 font-size-base align-middle"></i>
-                                    ID: {{item._id | uppercase}}
-                                </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
-                    <div class="col-12 mb-3">
+                    
+                    <!-- <div class="col-12 mb-3">
                         <div class="d-flex align-items-center">
-                            <span class="h5 d-inline-block mb-0">S/. {{item.subtotal}} </span>
+                            <span style="color: red;" class="h5 d-inline-block mb-0">MontoS/. {{item.subtotal}} </span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
         </ng-container>
     </div>
-    <div class="card-footer">
+    <!-- <div class="card-footer">
         <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="ventas.length">
         </ngb-pagination>
-    </div>
+    </div> -->
 </div>

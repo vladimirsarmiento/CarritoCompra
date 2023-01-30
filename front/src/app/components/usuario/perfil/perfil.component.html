@@ -28,41 +28,43 @@
                 <div class="d-flex align-items-center justify-content-between mb-4 pb-1 pb-sm-3">
                     <h1 class="h2 mb-0">Mi perfil</h1>
 
-                    <!-- Eliminar cuenta -->
-
-                    <!-- <a href="#" class="btn text-danger btn-link font-size-base text-decoration-none pr-0">
-                        <i class="cxi-delete font-size-lg mt-n1 mr-2"></i>
-                        Delete account
-                    </a> -->
 
                 </div>
                 <form #actualizarForm="ngForm" (ngSubmit)="actualizar(actualizarForm)">
                     <div class="row pb-3">
                         <div class="col-sm-6 form-group">
                             <label for="nombres" class="form-label">Nombres</label>
-                            <input required type="text" class="form-control form-control-lg" 
-                                name="nombres" [(ngModel)]="cliente.nombres" placeholder="Nombres" id="nombres">
+                            <input required type="text" class="form-control form-control-lg" name="nombres"
+                                [(ngModel)]="cliente.nombres" placeholder="Nombres" id="nombres">
                         </div>
                         <div class="col-sm-6 form-group">
                             <label for="apellidos" class="form-label">Apellidos</label>
-                            <input required type="text" class="form-control form-control-lg" 
-                                name="apellidos" [(ngModel)]="cliente.apellidos" placeholder="Apellidos" id="apellidos">
+                            <input required type="text" 
+                            class="form-control form-control-lg" name="apellidos"
+                                [(ngModel)]="cliente.apellidos" 
+                                placeholder="Apellidos" id="apellidos">
                         </div>
+
                         <div class="col-sm-6 form-group">
                             <label for="correo" class="form-label">Correo electrónico</label>
-                            <input required type="email" class="form-control form-control-lg"
-                               value="{{cliente.email}}" readonly placeholder="example@example.com" id="correo">
+                            <input required type="email" class="form-control form-control-lg" 
+                            value="{{cliente.email}}"
+                                readonly placeholder="example@example.com" id="correo">
                         </div>
+                       
                         <div class="col-sm-6 form-group">
                             <label class="form-label" for="tel">Teléfono</label>
-                            <input required type="text" class="form-control form-control-lg" maxlength="9"
-                                name="telefono" [(ngModel)]="cliente.telefono" placeholder="Teléfono" id="tel">
+                            <input required type="text" 
+                            class="form-control form-control-lg" maxlength="9"
+                                name="telefono" [(ngModel)]="cliente.telefono" 
+                                placeholder="Teléfono" id="tel">
                         </div>
                         <div class="form-group col-lg-6">
                             <label for="signin-password" class="form-label">Contraseña nueva</label>
                             <div class="cs-password-toggle input-group-overlay">
-                                <input type="password" class="form-control appended-form-control"
-                                    id="signin-password" placeholder="Contraseña"
+                                <input type="password" 
+                                class="form-control appended-form-control" id="signin-password"
+                                    placeholder="Contraseña" 
                                     name="password1" [(ngModel)]="password1">
                                 <div class="input-group-append-overlay">
                                     <label class="btn cs-password-toggle-btn input-group-text">
@@ -75,9 +77,8 @@
                         <div class="form-group col-lg-6">
                             <label for="signin-password1" class="form-label">Confirmar contraseña</label>
                             <div class="cs-password-toggle input-group-overlay">
-                                <input type="password" class="form-control appended-form-control"
-                                    id="signin-password1" placeholder="Contraseña" 
-                                    name="password2" [(ngModel)]="password2" 
+                                <input type="password" class="form-control appended-form-control" id="signin-password1"
+                                    placeholder="Contraseña" name="password2" [(ngModel)]="password2"
                                     (keyup)="compare_password()">
                                 <div class="input-group-append-overlay">
                                     <label class="btn cs-password-toggle-btn input-group-text">
@@ -92,43 +93,20 @@
                                 <em><small>Las contraseñas no coinciden</small></em>
                             </div>
                         </div>
-                        <div class="col-sm-6 form-group">
-                            <label class="form-label" for="nac">Fecha de nacimiento</label>
-                            <input required type="date" class="form-control form-control-lg"
-                                name="f_nacimiento" [(ngModel)]="cliente.f_nacimiento" id="nac">
-                        </div>
+
                         <div class="col-sm-6 form-group">
                             <label class="form-label" for="dni">DNI</label>
-                            <input required type="text" class="form-control form-control-lg" maxlength="8"
-                                name="dni" [(ngModel)]="cliente.dni" placeholder="Ingrese su DNI" id="dni">
+                            <input required type="text" 
+                            class="form-control form-control-lg" maxlength="8" name="dni"
+                                [(ngModel)]="cliente.dni" placeholder="Ingrese su DNI" id="dni">
                         </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="ac-genero" class="form-label">Género</label>
-                            <select required id="ac-genero" class="custom-select custom-select-lg" 
-                            name="genero" [(ngModel)]="cliente.genero">
-                                <option value="" disabled selected>--Seleccionar--</option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="ac-pais" class="form-label">País</label>
-                            <select required id="ac-pais" class="custom-select custom-select-lg"
-                            name="pais" [(ngModel)]="cliente.pais">
-                                <option value="" disabled selected>--Seleccionar--</option>
-                                <option value="Peru">Peru</option>
-                                <option value="Bolivia">Bolivia</option>
-                                <option value="Chile">Chile</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Colombia">Colombia</option>
-                            </select>
-                        </div>
+                        
                     </div>
                     <div class="justify-content-center row">
-                        <button type="submit" class="btn btn-success btn-lg bi-check-circle-fill"
+                        <button type="submit" class="btn btn-danger btn-lg bi-check-circle-fill"
                             [disabled]="actualizarForm.invalid || !valid"> Actualizar perfil</button>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

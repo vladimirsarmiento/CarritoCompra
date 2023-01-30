@@ -94,7 +94,7 @@
                     <!-- Sin descuento -->
                     <div class="d-flex align-items-center mb-sm-0 mb-4"
                         *ngIf="descuento_activo == undefined && producto.descuento == undefined">
-                        <span class="h3 d-inline-block mb-0"> 
+                        <span class="h3 d-inline-block mb-0">
                             Precio: S/. {{producto.precio}}
                         </span>
                     </div>
@@ -117,8 +117,9 @@
                     <div class="col-6 order-sm-1 order-1">
                         <div class="form-group">
                             <label for="size"> Seleccione la {{producto.titulo_variedad}} </label>
-                            <select style="border: solid 1px  rgb(89, 48, 191)" class="form-control custom-select" id="size" name="variedad"
-                                [(ngModel)]="carrito_data.variedad" (change)="guardar_variedad()">
+                            <select style="border: solid 1px  rgb(89, 48, 191)" class="form-control custom-select"
+                                id="size" name="variedad" [(ngModel)]="carrito_data.variedad"
+                                (change)="guardar_variedad()">
                                 <option value="" selected disabled> --Seleccionar-- </option>
                                 <option *ngFor="let item of producto.variedades" value="{{item.titulo}}">
                                     {{item.titulo}} </option>
@@ -129,8 +130,9 @@
                     <div class="col-6 order-2 order-sm-2">
                         <div class="form-group">
                             <label for="">Seleccione la Cantidad</label>
-                            <select style="border: solid 1px  rgb(89, 48, 191)" class="form-control custom-select" id="select-input" name="cantidad"
-                                [(ngModel)]="carrito_data.cantidad" (change)="guardar_cantidad()">
+                            <select style="border: solid 1px  rgb(89, 48, 191)" class="form-control custom-select"
+                                id="select-input" name="cantidad" [(ngModel)]="carrito_data.cantidad"
+                                (change)="guardar_cantidad()">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -168,13 +170,15 @@
                     <!-- <div class="card border-bottom">
                         <div class="card-header" id="delivery-card">
                             <h6 class="accordion-heading">
-                                <a href="#delivery" class="show" role="button" data-toggle="collapse"
+                                <a href="#delivery" class="show" role="button" 
+                                data-toggle="collapse"
                                     aria-expanded="false" aria-controls="delivery">Envío
                                     <span class="accordion-indicator"></span>
                                 </a>
                             </h6>
                         </div>
-                        <div class="show" id="delivery" aria-labelledby="delivery-card" data-parent="#productTerms">
+                        <div class="show" id="delivery" aria-labelledby="delivery-card" 
+                        data-parent="#productTerms">
                             <div class="card-body">
 
                                 EL envío de nuestros productos fuera de Ayacucho, se realizará a través de

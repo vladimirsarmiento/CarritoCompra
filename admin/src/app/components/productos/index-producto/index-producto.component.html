@@ -2,10 +2,9 @@
 
 <!-- Page title-->
 <div class="border-bottom mt-4 mb-5">
-    <h2 style="color: rgb(89, 48, 191);" class="mt-2 mt-md-4 mb-3 pt-5">PRODUCTOS</h2>
+    <h2 style="color: rgb(89, 48, 191);" class="mt-2 mt-md-4 mb-3 pt-5">Panel de productos</h2>
     <div class="d-flex flex-wrap flex-md-nowrap justify-content-center">
         <p class="text-muted mt-2">
-            <!-- Este módulo lista todos los productos de la tienda. -->
         </p>
         <p class=" font-size-sm font-weight-medium pl-md-4">
             <a style="background-color: rgb(89, 48, 191);" class="text-nowrap btn btn-primary" [routerLink]="['/panel/productos/registro']">
@@ -45,11 +44,16 @@
                     <tr>
                         <th>#</th>
                         <th>Título</th>
-                        <!-- <th>Stock</th>
-                        <th>Precio</th>
-                        <th>Categoría</th>
-                        <th>Ventas</th> -->
+                        <th>Stock</th>
+                        <!-- <th>Precio</th>
+                        <th>Categoría</th> -->
+                        <th>Ventas</th>
+                        <th>inventario</th>
                         <th>Opciones</th>
+                        <th>Eliminar</th>
+
+                        
+
                     </tr>
                 </thead>
 
@@ -83,10 +87,19 @@
                                 </h6>
                             </td>
                             
-                            <!-- <td class="text-center">{{ item.stock }}</td>
-                            <td class="text-center">{{ item.precio }}</td>
-                            <td class="text-center">{{ item.categoria }}</td>
-                            <td class="text-center">{{ item.nventas }}</td> -->
+                            <td class="text-center">{{ item.stock }}</td>
+                            <!-- <td class="text-center">{{ item.precio }}</td>
+                            <td class="text-center">{{ item.categoria }}</td> -->
+                            <td class="text-center">{{ item.nventas }}</td>
+
+                            
+
+                            <!-- inventario -->
+                            <td>
+                                <a class="dropdown-item bi-bar-chart text-primary"
+                                [routerLink]="['/panel/productos/inventario', item._id]">
+                                </a>
+                            </td>
                             
                             <!-- opciones -->
                             <td class="text-center">
@@ -98,11 +111,9 @@
                                     <div  class="dropdown-menu text-center">
                                         <!-- <a class="dropdown-item bi-pencil-fill"
                                             [routerLink]="['/panel/productos', item._id]">
-                                            Editar producto</a>
+                                            Editar producto</a> -->
 
-                                        <a class="dropdown-item bi-check-circle-fill"
-                                            [routerLink]="['/panel/productos/inventario', item._id]">
-                                            Inventario</a> -->
+                                       
                                             
                                         <a class="dropdown-item text-primary bi-card-image"
                                             [routerLink]="['/panel/productos/galeria', item._id]">
@@ -115,17 +126,18 @@
 
                                         <!-- <a class="dropdown-item text-primary bi-chat-left-dots-fill"
                                             [routerLink]="['/panel/productos/reviews', item._id]">
-                                            Reseñas</a>
+                                            Reseñas</a> -->
 
-                                        <a class="dropdown-item bi-trash-fill text-danger" style="cursor: pointer"
+                                        <!-- <a class="dropdown-item bi-trash-fill text-danger" style="cursor: pointer"
                                             data-toggle="modal"
                                             [attr.data-target]="'#delete-' + item._id">
                                             Eliminar producto</a> -->
 
                                     </div>
                                 </div>
+                                
 
-                                <div class="modal fade" id="delete-{{ item._id }}" tabindex="-1" style="display: none"
+                                <!-- <div class="modal fade" id="delete-{{ item._id }}" tabindex="-1" style="display: none"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -143,27 +155,42 @@
                                                     Desea eliminar el producto {{ item.titulo }}?
                                                 </p>
                                             </div>
+
                                             <div class="modal-footer">
                                                 <button class="btn btn-secondary btn-sm bi-x-circle-fill" type="button"
                                                     data-dismiss="modal">
                                                     Cancelar
                                                 </button>
+                                                
                                                 <button *ngIf="!load_btn" class="btn btn-danger btn-sm bi-trash-fill"
                                                     (click)="eliminar(item._id)" type="button">
                                                     Eliminar
                                                 </button>
 
-                                                <!-- Button with growing spinner and text -->
+                                                
                                                 <button *ngIf="load_btn" type="button" class="btn btn-secondary">
                                                     <span class="spinner-grow spinner-grow-sm me-2" role="status"
                                                         aria-hidden="true" disabled></span>
                                                     Eliminando...
                                                 </button>
                                             </div>
+
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </td>
+
+                            <!-- eliminar producto -->
+                            <td class="">
+                                <a class="dropdown-item bi-trash-fill text-danger" style="cursor: pointer"
+                                data-toggle="modal"
+                                 
+                                (click)="eliminar(item._id)">
+                                </a>
+                            </td>
+
+                            
+
                         </tr>
                     </tbody>
                 </ng-container>

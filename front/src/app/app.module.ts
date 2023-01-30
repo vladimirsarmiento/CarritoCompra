@@ -22,19 +22,15 @@ import { ShowProductoComponent } from './components/productos/show-producto/show
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DireccionesComponent } from './components/usuario/direcciones/direcciones.component';
-import { SoftwareComponent } from './components/software/software.component';
 import { DescuentoPipe } from './pipes/descuento.pipe';
 import { ScrolltopComponent } from './components/scrolltop/scrolltop.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { OrdenesComponent } from './components/usuario/ordenes/ordenes.component';
 import { DetalleOrdenComponent } from './components/usuario/detalle-orden/detalle-orden.component';
-import { IndexReviewComponent } from './components/usuario/reviews/index-review/index-review.component';
 import { ShowSofwareComponent } from './components/show-sofware/show-sofware.component';
 import { TermCondicionesComponent } from './components/static/term-condiciones/term-condiciones.component';
 import { PolPrivacidadComponent } from './components/static/pol-privacidad/pol-privacidad.component';
-import { CompraSoftwareComponent } from './components/usuario/compra-software/compra-software.component';
-import { CompraSoftwareDetComponent } from './components/usuario/compra-software-det/compra-software-det.component';
 
 @NgModule({
   declarations: [
@@ -50,19 +46,15 @@ import { CompraSoftwareDetComponent } from './components/usuario/compra-software
     CarritoComponent,
     RegisterComponent,
     DireccionesComponent,
-    SoftwareComponent,
     DescuentoPipe,
     ScrolltopComponent,
     ContactoComponent,
     NosotrosComponent,
     OrdenesComponent,
     DetalleOrdenComponent,
-    IndexReviewComponent,
     ShowSofwareComponent,
     TermCondicionesComponent,
     PolPrivacidadComponent,
-    CompraSoftwareComponent,
-    CompraSoftwareDetComponent
   ],
   imports: [
     BrowserModule,
