@@ -28,7 +28,6 @@ import { GaleriaProductoComponent } from './components/productos/galeria-product
 import { CreateDescuentoComponent } from './components/descuento/create-descuento/create-descuento.component';
 import { EditDescuentoComponent } from './components/descuento/edit-descuento/edit-descuento.component';
 import { IndexDescuentoComponent } from './components/descuento/index-descuento/index-descuento.component';
-import { IndexContactoComponent } from './components/contacto/index-contacto/index-contacto.component';
 import { ReviewsProductoComponent } from './components/productos/reviews-producto/reviews-producto.component';
 import { IndexVentasComponent } from './components/ventas/index-ventas/index-ventas.component';
 import { DetalleVentasComponent } from './components/ventas/detalle-ventas/detalle-ventas.component';
@@ -59,7 +58,6 @@ import { EditCuentasComponent } from './components/cuentas/edit-cuentas/edit-cue
     CreateDescuentoComponent,
     EditDescuentoComponent,
     IndexDescuentoComponent,
-    IndexContactoComponent,
     ReviewsProductoComponent,
     IndexVentasComponent,
     DetalleVentasComponent,

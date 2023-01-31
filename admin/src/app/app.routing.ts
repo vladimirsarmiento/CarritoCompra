@@ -19,7 +19,6 @@ import { GaleriaProductoComponent } from './components/productos/galeria-product
 import { IndexDescuentoComponent } from './components/descuento/index-descuento/index-descuento.component';
 import { CreateDescuentoComponent } from './components/descuento/create-descuento/create-descuento.component';
 import { EditDescuentoComponent } from './components/descuento/edit-descuento/edit-descuento.component';
-import { IndexContactoComponent } from './components/contacto/index-contacto/index-contacto.component';
 import { ReviewsProductoComponent } from './components/productos/reviews-producto/reviews-producto.component';
 import { IndexVentasComponent } from './components/ventas/index-ventas/index-ventas.component';
 import { DetalleVentasComponent } from './components/ventas/detalle-ventas/detalle-ventas.component';
@@ -61,7 +60,6 @@ const appRoute: Routes = [
 
         /*{path: 'ventas-software', component: VentasSofwareComponent, canActivate: [AdminGuard]},*/
 
-        {path: 'contactos', component: IndexContactoComponent, canActivate: [AdminGuard]},
 
         {path: 'cuentas', component: IndexCuentasComponent, canActivate: [AdminGuard]},
         {path: 'cuentas/registro', component: CreateCuentasComponent, canActivate: [AdminGuard]},
