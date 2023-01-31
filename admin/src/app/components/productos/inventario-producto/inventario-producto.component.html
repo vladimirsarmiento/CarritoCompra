@@ -2,10 +2,10 @@
 
 <!-- Page title-->
 <div class="border-bottom mt-4 mb-5">
-    <h1 class="mt-2 mt-md-4 mb-3 pt-5">Productos</h1>
+    <h1 style="color: rgb(89, 48, 191);" class="mt-2 mt-md-4 mb-3 pt-5">Panel de Inventario</h1>
     <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
         <p class="text-muted">
-            Este módulo muestra el inventario de los productos de la tienda.
+         
         </p>
         <p class="font-size-sm font-weight-medium pl-md-4">
             <a class="text-nowrap bi-arrow-left-circle-fill" [routerLink]="['/panel/productos']">
@@ -44,14 +44,14 @@
                     <input type="text" class="form-control" 
                         placeholder="Proveedor"
                         name="proveedor"
-                        [(ngModel)] = "inventario.proveedor" required>
+                        [(ngModel)] = "inventario.proveedor" >
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary bi-clipboard-plus-fill" 
-                        [disabled]="inventarioForm.invalid"> Registrar</button>
+                    <button type="submit" class="btn btn-danger bi-clipboard-plus-fill" 
+                        [disabled]="inventarioForm.invalid"> Guardar</button>
 
-                    <button type="button" class="btn btn-success bi-file-earmark-excel-fill ml-3"
-                        (click)="download_excel()"></button>
+                    <!-- <button type="button" class="btn btn-success bi-file-earmark-excel-fill ml-3"
+                        (click)="download_excel()"></button> -->
                 </div>
             </form>
         </div>
@@ -60,7 +60,7 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered text-center">
-                <thead class="thead-dark">
+                <thead style="background-color: rgb(89, 48, 191); color: white;" class="">
                     <tr>
                         <th>#</th>
                         <th>Admin</th>

@@ -26,7 +26,7 @@
         <hr class="border-top-0 border-bottom pt-2 mb-4">
 
         <!-- Order review -->
-        <h2 class="h4 mb-4">1. Mis órdenes</h2>
+        <h2 style="background-color: rgba(207, 160, 4, 0.301);border:1px solid rgba(207, 160, 4, 0.301); border-radius: 50px"  class="h4 pt-2 pb-2 mb-4 text-center">Mis órdenes</h2>
         <div  class="bg-secondary rounded mb-5" *ngIf="carrito_arr.length >= 1">
           <!-- Item -->
           <div  style="background-color: hsla(150, 70%, 59%, 0.103);"
@@ -106,7 +106,7 @@
         </div>
 
         <!-- Adresses -->
-        <h2 class="h4">2. Dirección de envío</h2>
+        <h2 style="background-color: rgba(207, 160, 4, 0.301);border:1px solid rgba(207, 160, 4, 0.301); border-radius: 50px"  class="h4 pt-2 pb-2 mb-4 text-center">Dirección de envío</h2>
         <div class="row">
           <div style="background-color: hsla(150, 70%, 59%, 0.103);" class="card-body">
             <div class="row justify-content-center" *ngIf="direccion_principal != undefined">
@@ -159,7 +159,7 @@
         <hr class="mb-4 pb-2">
 
         <!-- Payment -->
-        <h2 class="h4 pt-2 mb-4">3. Método de pago</h2>
+        <h2 style="background-color: rgba(207, 160, 4, 0.301);border:1px solid rgba(207, 160, 4, 0.301); border-radius: 50px"  class="h4 pt-2 pb-2 mb-4 text-center">Método de pago</h2>
         <div class="row pb-4">
           <div class="col-lg-12">
             <div class="accordion-alt" id="payment-methods">
@@ -318,6 +318,19 @@
 
 
       </div>
+
+
+      <!-- sección de imágenes -->
+      <aside class="col-lg-4 mt-6">
+        
+        <img src="https://img.freepik.com/free-vector/running-sport-shoes-illustration_1284-17528.jpg?w=740&t=st=1675103222~exp=1675103822~hmac=a932744003fadca4de67a71f844a54e07dfd6235811dfeace2ac0f2ec3df7593" alt="image01" [routerLink]="['/productos/categoria/adidas']">
+
+        <img src="https://img.freepik.com/free-photo/sport-running-shoes_1203-3414.jpg?w=740&t=st=1675103302~exp=1675103902~hmac=6c5daff5a285e50b7aeae816c53471fcaa69e8a88804ee4036e3d1196cf6b967"  alt="image02" [routerLink]="['/productos/categoria/nike']">
+
+        <img src="https://img.freepik.com/free-photo/pair-trainers_144627-3799.jpg?w=740&t=st=1675103115~exp=1675103715~hmac=296f93bdd5c1c3b242da9427c206c4345ee1e2f984689faf8af1f3223eebb619" alt="image03" [routerLink]="['/productos/categoria/vans']">
+
+
+      </aside>
 
 
       <!-- Order totals (sticky sidebar) -->

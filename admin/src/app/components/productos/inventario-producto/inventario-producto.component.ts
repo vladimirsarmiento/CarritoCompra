@@ -191,7 +191,7 @@ export class InventarioProductoComponent implements OnInit {
     worksheet.columns = [
       {header: 'Trabajador', key: 'col1', width: 30},
       {header: 'Cantidad', key: 'col2', width: 15},
-      {header: 'Proveedor', key: 'col3', width: 30}
+      //{header: 'Proveedor', key: 'col3', width: 30}
     ] as any;
 
     workbook.xlsx.writeBuffer().then((data) => {
