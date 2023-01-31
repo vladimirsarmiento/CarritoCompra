@@ -4,30 +4,32 @@
     "topSpacing": 120,
     "minWidth": 991
   }'>
-    <div class="sidebar-sticky-inner">
-        <div class="card">
+    <div  class="sidebar-sticky-inner">
+        <div style="background-color: rgba(13, 250, 5, 0.267);" class="card">
             <div class="card-body text-center" *ngIf="user_lc">
+                <h2 style="color: rgb(116, 25, 119); font-size: 100px;" class="bi-person-circle mb-0"></h2>
                 <h5 class="card-title mb-1">{{user_lc.nombres}} {{user_lc.apellidos}}</h5>
-                <p class="card-text text-muted mb-lg-0">{{user_lc.email}}</p>
-                <a href="#account-menu" class="btn btn-danger btn-block d-lg-none" 
+                <!-- <p class="card-text text-muted mb-lg-0">{{user_lc.email}}</p> -->
+                <a style="background-color: rgb(116, 25, 119); color: white"  href="#account-menu" class="btn  btn-block d-lg-none" 
                 data-toggle="collapse">Ver menú</a>
             </div>
+            
             <div id="account-menu" class="collapse d-lg-block">
-                <div class="list-group list-group-flush border-top">
+                <div  class="list-group list-group-flush border-top">
                     <a [routerLink]="['/cuenta/perfil']" routerLinkActive="active"
                         class="list-group-item list-group-item-action d-flex align-items-center">
                         <i class="cxi-profile font-size-lg mr-2"></i>
-                        <span>Mi perfill</span>
+                        <span>Perfill</span>
                     </a>
                     <a [routerLink]="['/cuenta/direcciones']" routerLinkActive="active"
                         class="list-group-item list-group-item-action d-flex align-items-center">
                         <i class="cxi-map-pin-outline font-size-lg mr-2"></i>
-                        <span>Mi dirección</span>
+                        <span>Dirección</span>
                     </a>
                     <a [routerLink]="['/cuenta/ordenes']" routerLinkActive="active"
                         class="list-group-item list-group-item-action d-flex align-items-center">
                         <i class="cxi-cart font-size-lg mr-2"></i>
-                        <span>Mis pedidos</span>
+                        <span>Pedidos</span>
                     </a>
                     
                     

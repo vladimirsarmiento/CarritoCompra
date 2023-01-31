@@ -53,14 +53,15 @@
                                     data-toggle="collapse" aria-expanded="false">
                                     <span class="pr-2">Cód. {{item._id | uppercase}} </span>
                                     <span class="font-size-sm text-muted text-nowrap px-2">
-                                        <i class="cxi-calendar font-size-base align-middle mt-n1 mr-1"></i>
+                                        <i style="color:rgb(89, 48, 191);"  class="cxi-calendar font-size-base align-middle mt-n1 mr-1"></i>
                                         {{item.createdAt | date}}
                                     </span>
-                                    <span class="badge badge-secondary rounded-pill" *ngIf="item.estado == 'Reservado'"> {{item.estado}} </span>
+
+                                    <!-- <span class="badge badge-secondary rounded-pill" *ngIf="item.estado == 'Reservado'"> {{item.estado}} </span>
                                     <span class="badge badge-info rounded-pill" *ngIf="item.estado == 'Procesando'"> {{item.estado}} </span>
                                     <span class="badge badge-success rounded-pill" *ngIf="item.estado == 'Enviado'"> {{item.estado}} </span>
                                     <span class="badge badge-warning rounded-pill" *ngIf="item.estado == 'Recibido'"> {{item.estado}} </span>
-                                    <span class="text-dark pl-1">S/. {{item.subtotal}} </span>
+                                    <span class="text-dark pl-1">S/. {{item.subtotal}} </span> -->
                                 </a>
                             </div>
 
