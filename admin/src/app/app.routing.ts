@@ -1,6 +1,6 @@
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { ModuleWithProviders } from "@angular/core"
-import { InicioComponent } from './components/inicio/inicio.component';
+//import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminGuard } from "./guards/admin.guard";
 import { IndexClienteComponent } from './components/clientes/index-cliente/index-cliente.component';
@@ -22,7 +22,7 @@ import { EditDescuentoComponent } from './components/descuento/edit-descuento/ed
 import { ReviewsProductoComponent } from './components/productos/reviews-producto/reviews-producto.component';
 import { IndexVentasComponent } from './components/ventas/index-ventas/index-ventas.component';
 import { DetalleVentasComponent } from './components/ventas/detalle-ventas/detalle-ventas.component';
-/*import { VentasSofwareComponent } from './components/ventas-sofware/ventas-sofware.component'; */
+
 import { IndexCuentasComponent } from './components/cuentas/index-cuentas/index-cuentas.component';
 import { CreateCuentasComponent } from './components/cuentas/create-cuentas/create-cuentas.component';
 import { EditCuentasComponent } from './components/cuentas/edit-cuentas/edit-cuentas.component';
@@ -31,7 +31,7 @@ const appRoute: Routes = [
 
     {path: '', redirectTo: 'inicio', pathMatch: 'full'},
 
-    {path: 'inicio', component: InicioComponent, canActivate: [AdminGuard]},
+    //{path: 'inicio', component: InicioComponent, canActivate: [AdminGuard]},
 
     {path: 'panel', children: [
         {path: 'clientes', component: IndexClienteComponent, canActivate: [AdminGuard]},
