@@ -35,9 +35,6 @@ api.get('/obtener_detalles_orden_cliente/:id', auth.auth, clienteController.obte
 api.put('/actualizar_ventas_recibido/:id', auth.auth, clienteController.actualizar_ventas_recibido);
 
 
-//CUpones
-api.put('/actualizar_cupon_cliente/:id', auth.auth, clienteController.actualizar_cupon_cliente);
-
 
 //Cuentas
 api.get('/obtener_cuentas', auth.auth, clienteController.obtener_cuentas);

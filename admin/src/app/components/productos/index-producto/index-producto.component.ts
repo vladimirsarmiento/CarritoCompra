@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../../service/producto.service';
 import { GLOBAL } from '../../../service/global';
-import { Workbook } from "exceljs";
+//import { Workbook } from "exceljs";
 import * as fs from 'file-saver';
 
 declare var iziToast: { show: (arg0: { title: string; titleColor: string; class: string; position: string; message: string; }) => void; };
@@ -123,7 +123,7 @@ export class IndexProductoComponent implements OnInit {
     );
   }
 
-  download_excel(){
+ /* download_excel(){
     let workbook = new Workbook();
     let worksheet = workbook.addWorksheet("Reporte de productos");
 
@@ -153,6 +153,6 @@ export class IndexProductoComponent implements OnInit {
       fs.saveAs(blob, fname + '-' + new Date().valueOf() + '.xlsx');
     });
     
-  }
+  }*/
 
 }

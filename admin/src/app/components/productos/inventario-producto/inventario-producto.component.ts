@@ -6,8 +6,8 @@ declare var iziToast: { show: (arg0: { title: string; titleColor: string; class:
 declare var jQuery: any;
 declare var $: any;
 
-import { Workbook } from "exceljs";
-import * as fs from 'file-saver';
+//import { Workbook } from "exceljs";
+//import * as fs from 'file-saver';
 
 @Component({
   selector: 'app-inventario-producto',
@@ -171,7 +171,7 @@ export class InventarioProductoComponent implements OnInit {
     }
   }
 
-  download_excel(){
+  /*download_excel(){
     let workbook = new Workbook();
     let worksheet = workbook.addWorksheet("Reporte de productos");
 
@@ -199,6 +199,6 @@ export class InventarioProductoComponent implements OnInit {
       fs.saveAs(blob, fname + '-' + new Date().valueOf() + '.xlsx');
     });
     
-  }
+  }*/
 
 }

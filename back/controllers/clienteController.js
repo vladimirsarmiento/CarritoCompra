@@ -5,7 +5,6 @@ var Cliente = require('../models/cliente');
 var Venta = require('../models/venta');
 var Dventa = require('../models/dventa');
 
-var Cupon = require('../models/cupon');
 var Cuenta = require('../models/cuenta');
 var bcrypt = require('bcrypt-nodejs');
 var jwt = require('../helpers/jwt');
@@ -470,23 +469,7 @@ const actualizar_ventas_recibido = async function (req, res) {
   }
 }
 
-const actualizar_cupon_cliente = async function (req, res) {
-  if (req.user) {
 
-    var id = req.params['id'];
-    var data = req.body;
-
-    let reg = await Cupon.findByIdAndUpdate({ _id: id }, {
-      codigo: data.codigo,
-      tipo: data.tipo,
-      valor: data.valor,
-      limite: data.limite - 1
-    });
-    res.status(200).send({ data: reg });
-  } else {
-    res.status(500).send({ message: 'NoAccess' });
-  }
-}
 
 ////////Cuentas del back
 const obtener_cuentas = async function (req, res) {
@@ -528,6 +511,5 @@ module.exports = {
   obtener_review_producto_cliente,
   obtener_reviews_cliente,
   actualizar_ventas_recibido,
-  actualizar_cupon_cliente,
   obtener_cuentas
 };

@@ -495,7 +495,7 @@ const kpi_ganancias_programas_admin = async function (req, res) {
             var total_mes_anterior = 0;
             var count_ventas = 0;
 
-            var reg = await VentaSoftware.find();
+           
             let current_date = new Date();
             let current_year = current_date.getFullYear();
             let current_month = current_date.getMonth() + 1;
