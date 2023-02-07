@@ -149,7 +149,7 @@ export class ShowProductoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this._title.setTitle('HJM TECNOLOGÍA Y SOPORTE | ' + this.slug);
+    this._title.setTitle('Carrito Compras | ' + this.slug);
 
     //Obtener descuentos activos
     this._guestService.obtener_descuento_activo().subscribe(
@@ -204,7 +204,7 @@ export class ShowProductoComponent implements OnInit {
                   titleColor: '#35D18F',
                   class: 'text-success',
                   position: 'topRight',
-                  message: 'Se agregó al carrito'
+                  message: 'Se agregó al con éxito carrito'
                 });
   
                 this.socket.emit('add-carrito', {data: true});

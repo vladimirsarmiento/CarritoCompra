@@ -92,7 +92,7 @@ export class IndexProductoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._title.setTitle('HJM TECNOLOGÍA Y SOPORTE | Productos');
+    this._title.setTitle('Productos');
 
     var slider: any = document.getElementById('slider');
     noUiSlider.create(slider, {
@@ -118,21 +118,9 @@ export class IndexProductoComponent implements OnInit {
     });
     $('.noUi-tooltip').css('font-size', '11px');
 
-    //Obtener descuentos activos
-    this._guestService.obtener_descuento_activo().subscribe(
-      response => {
-
-        if (response.data != undefined) {
-          this.descuento_activo = response.data[0];
-        } else {
-          this.descuento_activo = undefined;
-        }
-      }
-    );
   }
 
   buscar_categorias() {
-
     if (this.filter_categoria) {
       var search = new RegExp(this.filter_categoria, 'i');
       this.config_global.categorias = this.config_global.categorias.filter(
@@ -301,7 +289,7 @@ export class IndexProductoComponent implements OnInit {
             titleColor: '#35D18F',
             class: 'text-success',
             position: 'topRight',
-            message: 'Se agregó al carrito'
+            message: 'Se agregó con éxito al carrito'
           });
           this.socket.emit('add-carrito', {data: true});
 
