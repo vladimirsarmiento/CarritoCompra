@@ -12,9 +12,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { DireccionesComponent } from './components/usuario/direcciones/direcciones.component';
 import { OrdenesComponent } from './components/usuario/ordenes/ordenes.component';
 import { DetalleOrdenComponent } from './components/usuario/detalle-orden/detalle-orden.component';
-import { ShowSofwareComponent } from './components/show-sofware/show-sofware.component';
-import { PolPrivacidadComponent } from './components/static/pol-privacidad/pol-privacidad.component';
-import { TermCondicionesComponent } from './components/static/term-condiciones/term-condiciones.component';
 
 const appRoute: Routes = [
     {path: '', component: InicioComponent},
@@ -30,10 +27,7 @@ const appRoute: Routes = [
     {path: 'productos/:slug', component: ShowProductoComponent},
     {path: 'productos/categoria/:categoria', component: IndexProductoComponent},
 
-    {path: 'software/:slug', component: ShowSofwareComponent, canActivate: [AuthGuard]},
 
-    {path: 'politica-privacidad', component: PolPrivacidadComponent},
-    {path: 'terminos-condiciones', component: TermCondicionesComponent},
 
 ]
 

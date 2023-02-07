@@ -26,9 +26,6 @@ import { DescuentoPipe } from './pipes/descuento.pipe';
 import { ScrolltopComponent } from './components/scrolltop/scrolltop.component';
 import { OrdenesComponent } from './components/usuario/ordenes/ordenes.component';
 import { DetalleOrdenComponent } from './components/usuario/detalle-orden/detalle-orden.component';
-import { ShowSofwareComponent } from './components/show-sofware/show-sofware.component';
-import { TermCondicionesComponent } from './components/static/term-condiciones/term-condiciones.component';
-import { PolPrivacidadComponent } from './components/static/pol-privacidad/pol-privacidad.component';
 
 @NgModule({
   declarations: [
@@ -48,9 +45,6 @@ import { PolPrivacidadComponent } from './components/static/pol-privacidad/pol-p
     ScrolltopComponent,
     OrdenesComponent,
     DetalleOrdenComponent,
-    ShowSofwareComponent,
-    TermCondicionesComponent,
-    PolPrivacidadComponent,
   ],
   imports: [
     BrowserModule,
