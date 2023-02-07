@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._title.setTitle('HJM TECNOLOGÍA Y SOPORTE | Registro');
+    this._title.setTitle('Registro');
   }
 
   show_password() {
@@ -72,12 +72,9 @@ export class RegisterComponent implements OnInit {
       let data = {
         nombres: this.user.nombres,
         apellidos: this.user.apellidos,
-        pais: this.user.pais,
         email: this.user.email,
         password: this.user.password,
         telefono: this.user.telefono,
-        //genero: this.user.genero,
-        //f_nacimiento: this.user.f_nacimiento,
         dni: this.user.dni
       }
 

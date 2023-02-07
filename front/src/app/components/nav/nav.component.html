@@ -5,12 +5,6 @@
   <div class="navbar navbar-expand-lg navbar-light bg-light" data-fixed-element
     style="position: fixed; top: 0; left: 0; z-index: 9999; width: 100%; height: 50px;">
     <div class="container px-0 px-xl-3">
-      <!-- Logo -->
-
-      <!-- <a [routerLink]="['/']" class="navbar-brand order-lg-1 mr-0 pr-lg-3 mr-lg-4">
-        <img [src]="url + 'obtener_logo/' + logo" alt="{{logo}}" style="width: 5vw;"
-          class="my-0">
-      </a> -->
 
       <!-- Search desktop -->
       <div class="input-group-overlay ml-4 d-lg-block d-none order-lg-3" style="max-width: 21rem">
@@ -46,7 +40,6 @@
               <div class="dropdown-menu">
                 <a [routerLink]="['/cuenta/perfil']" routerLinkActive="active" class="dropdown-item">
                   <i class="cxi-profile me-2"></i> Perfil
-                  <!-- <span class="badge rounded-pill bg-danger ms-2">3</span> -->
                 </a>
                 <a (click)="logout()" style="cursor: pointer;" class="dropdown-item text-danger">
                   <i class="cxi-logout me-2"></i>
@@ -69,10 +62,9 @@
           <li class="nav-item align-self-center mb-0" *ngIf="user_lc == undefined">
             <a style="cursor: pointer;" class="nav-tool pr-lg-0" [routerLink]="['/login']">
               <i class="cxi-cart nav-tool-icon"></i>
-              <span class="badge badge-success align-middle mt-n1 ml-2 px-2 font-size-xs"> 0 </span>
+              <span class="badge badge-danger align-middle mt-n1 ml-2 px-2 font-size-xs"> 0 </span>
             </a>
           </li>
-
 
 
           <li class="divider-vertical mb-0 d-lg-none d-block"></li>
@@ -146,17 +138,13 @@
   </div>
 </div>
 
-class=" "
 <div id="cart" class="cs-offcanvas cs-offcanvas-right">
 
   <!-- Header -->
   <div class="cs-offcanvas-cap align-items-center border-bottom">
     <h2 style="color: rgb(89, 48, 191);" class="h5 mb-0 bi-cart4 nav-tool-icon"> Mi carrito de
       compras({{carrito_arr.length}})</h2>
-    <!-- <button [routerLink]="['/carrito-compras']" class="btn btn-primary" [disabled]="carrito_arr.length == 0">
-      <i class="cxi-credit-card font-size-lg mt-n1 mr-1"></i>
-      Pagar
-    </button> -->
+   
     <button class="close mr-n1" type="button" data-dismiss="offcanvas" aria-label="Close" (click)="op_modalcart()">
       <span class="h3 font-weight-normal mb-0" aria-hidden="true">×</span>
     </button>
@@ -183,9 +171,6 @@ class=" "
               </span> {{item.variedad}}</li>
             </ul>
             <div class="d-flex align-items-center">
-              <!-- <input type="number" class="form-control 
-                form-control-sm bg-light mr-3" style="width: 4.5rem;"
-                value="{{item.cantidad}}" readonly> -->
 
               <div class="justify-content-between row">
                 <div *ngIf="descuento_activo == undefined" class="mb-3">
@@ -205,10 +190,7 @@ class=" "
               </div>
 
             </div>
-            <!-- <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
-              Agregar a deseos
-              <i class="cxi-heart ml-1"></i>
-            </button> -->
+           
           </div>
           <div class="nav-muted mr-n2">
             <a style="cursor: pointer;" class="nav-link px-2 mt-n2 text-danger" title="Eliminar"

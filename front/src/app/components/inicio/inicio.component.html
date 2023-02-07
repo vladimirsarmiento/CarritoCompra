@@ -1,20 +1,12 @@
 <app-nav></app-nav>
 
-<!-- <main class="cs-page-wrapper mt-5">
-   
-
-</main> -->
-
 <main class="cs-page-wrapper mt-5">
-    
-
 
     <!-- Productos nuevos -->
     <section class="container-fluid px-xl-grid-gutter mt-5 mb-3 mb-sm-4 mt-md-0 mb-lg-5 py-3">
         <div class="text-center mb-5 pb-2">
             <h2 class="h1">Tienda de calzados</h2>
-            <!-- <p class="font-size-lg text-muted mb-1">Explora los productos recién llegados a nuestra tienda</p> -->
-            <!-- <a [routerLink]="['/productos']" class="font-size-lg">Ver productos nuevos</a> -->
+            <a style="color:red" [routerLink]="['/productos']" class="font-size-lg"><strong>Ver productos de calzados</strong></a>
         </div>
 
         <div class="row" *ngIf="load_nuevos">

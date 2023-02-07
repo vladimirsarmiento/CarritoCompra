@@ -24,7 +24,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { DireccionesComponent } from './components/usuario/direcciones/direcciones.component';
 import { DescuentoPipe } from './pipes/descuento.pipe';
 import { ScrolltopComponent } from './components/scrolltop/scrolltop.component';
-import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { OrdenesComponent } from './components/usuario/ordenes/ordenes.component';
 import { DetalleOrdenComponent } from './components/usuario/detalle-orden/detalle-orden.component';
 import { ShowSofwareComponent } from './components/show-sofware/show-sofware.component';
@@ -47,7 +46,6 @@ import { PolPrivacidadComponent } from './components/static/pol-privacidad/pol-p
     DireccionesComponent,
     DescuentoPipe,
     ScrolltopComponent,
-    NosotrosComponent,
     OrdenesComponent,
     DetalleOrdenComponent,
     ShowSofwareComponent,

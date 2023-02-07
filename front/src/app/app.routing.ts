@@ -10,7 +10,6 @@ import { ShowProductoComponent } from "./components/productos/show-producto/show
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DireccionesComponent } from './components/usuario/direcciones/direcciones.component';
-import { NosotrosComponent } from "./components/nosotros/nosotros.component";
 import { OrdenesComponent } from './components/usuario/ordenes/ordenes.component';
 import { DetalleOrdenComponent } from './components/usuario/detalle-orden/detalle-orden.component';
 import { ShowSofwareComponent } from './components/show-sofware/show-sofware.component';
@@ -35,7 +34,6 @@ const appRoute: Routes = [
 
     {path: 'politica-privacidad', component: PolPrivacidadComponent},
     {path: 'terminos-condiciones', component: TermCondicionesComponent},
-    {path: 'nosotros', component: NosotrosComponent},
 
 ]
 

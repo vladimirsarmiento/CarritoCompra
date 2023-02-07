@@ -52,18 +52,6 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
     this._title.setTitle('Carrito de Compras');
 
-    //Obtener descuentos activos
-    this._guestService.obtener_descuento_activo().subscribe(
-      response => {
-
-        if (response.data != undefined) {
-          this.descuento_activo = response.data[0];
-        } else {
-          this.descuento_activo = undefined;
-        }
-      }
-    );
-
     //Listar productos nuevos
     this._guestService.listar_productos_nuevos().subscribe(
       response => {
@@ -72,21 +60,9 @@ export class InicioComponent implements OnInit {
       }
     );
 
-    //Obtener priductos más vendidos
-    this._guestService.listar_productos_mas_vendidos().subscribe(
-      response => {
-        this.productos_mas_vendidos = response.data;
-        this.load_mas_vendidos = false;
-      }
-    );
+    
 
-    //Obtener productos
-    this._guestService.listar_productos_descuento().subscribe(
-      response => {
-        this.productos_descuento = response.data;
-        this.load_descuento = false;
-      }
-    );
+    
   }
 
 }
